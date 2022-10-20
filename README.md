@@ -1,0 +1,1 @@
+# capacitor-statusbar-animation-bug
