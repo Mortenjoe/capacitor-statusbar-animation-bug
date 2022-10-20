@@ -16,13 +16,13 @@ export default defineComponent({
     IonRouterOutlet
   },
   setup() {
-    onMounted(() => {
-      StatusBar.setStyle({ style: Style.Dark }).catch(() => {
-        // error
-      })
-      StatusBar.show({ animation: Animation.Slide }).catch(() => {
-        // error
-      })
+    onMounted(async () => {
+      try {
+        await StatusBar.setStyle({ style: Style.Dark })
+        await StatusBar.show({ animation: Animation.Slide })
+      } catch (error) {
+        console.log(error)
+      }
     })
   }
 });
